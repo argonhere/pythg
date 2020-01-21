@@ -1,0 +1,97 @@
+<!doctype html><html><head>
+        <title>Pythagorus Theorem</title>
+    <style type="text/css" id="dcoder_stylesheet">body {
+text-align:center;
+background-image:linear-gradient(to right,#334d50,#cbcaa5);
+position:relative ;
+
+}
+ input[type=number]{
+     border-radius:20px;
+     border-style:bold ;
+     color:red;
+     text-align:center ;
+     color:black;
+     padding:10px 50px;
+     font-style:;
+     border-color:rgb;
+     font-weight:bold;
+     text-decoration:;
+     margin-top:10px;
+ }
+h1{
+    text-shadow:0.73px 0.84px #333;
+    text-decoration:underline ;
+    text-transform:uppercase ;
+    font-weight:bold;
+    font-variant:;
+    font-family:serif;
+    font-size:20px;
+}
+input[type=container]{
+     border-radius:20px;
+     border-style:bolder ;
+     color:red;
+     text-align:center ;
+     color:black;
+     padding:10px 50px;
+     font-style:;
+     border-color:rgb;
+     font-weight:bold;
+     text-decoration:;
+     margin-top:10px;
+ }
+ .box{
+     background:white;
+     height:10px;
+     width:10px;
+     animation-duration:1s;
+     animation-name:myanimation;
+     position:relative ;
+     animation-iteration-count:infinite ;
+     border-radius:10px;
+ }
+ @keyframes myanimation{
+     0%{background-color:white;left:0px; top:0px;}
+     25%{background-color:red;left:175px; top:0px;}
+     50%{background-color:green;left:350px; top:0px;}
+     75%{background-color:blue;left:175px; top:0px;}
+     100%{background-color:white;left:0px; top:0px;}
+ }
+</style></head>
+    <body>
+    <div class="box"></div>
+    <h1>Pythagorus Theorem</h1><br>
+   <b> Base:</b> <br>
+        <input type="number" placeholder="Base" name="b" id="b" oninput="f(); draw();"><br><br>
+      <b> Perpendicular: </b> <br>
+        <input type="number" placeholder="Perpendicular" name="p" id="p" oninput="f(); draw();">
+       <br><br> <hr><b>Hypotenuse:</b> <br>
+        <input type="container" placeholder="Hypotenuse" readonly name="h " id="h"><br><br><b>Area: </b><br>
+         <input type="container" placeholder="AREA" readonly name="a" id="a">
+        <br><br>
+        <canvas height="deviceheight" align="center" width="devicewidth" id="canvas"></canvas>
+    
+<script type="text/javascript" id="dcoder_script">var b=0,p=0,h=0,a=0;
+function f(){
+b=parseFloat(document.getElementById('b').value);
+p=parseFloat(document.getElementById('p').value);
+h=document.getElementById('h').value=Math.sqrt(Math.pow(b,2)+Math.pow(p,2));
+a=document.getElementById('a').value=0.5*p*b;
+
+}
+function draw(){
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext('2d');
+    context.clearRect(0,0,canvas.width,canvas.height);
+    context.beginPath();
+    context.moveTo(canvas.width/2,canvas.height/2);
+    context.lineTo(canvas.width/2,canvas.height/2+p);
+    context.lineTo(canvas.width/2+b,canvas.height/2+p);
+    context.closePath();
+    context.lineWidth=1;
+    context.strokeStyle = '#666666';
+    context.stroke();
+    context.fillStyle = "#FFCC00";
+    context.fill();
+}</script></body></html>
