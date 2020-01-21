@@ -1,1 +1,1 @@
-# PythagoreanTheorem
+# pyth
